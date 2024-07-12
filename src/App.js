@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProductList from './components/products/ProductList';
+import SecondaryProducts from './components/products/SecondaryProducts';
+import SingleProduct from './components/products/SingleProduct';
+import Cart from './components/products/Cart';
+import Navbar from './components/navbar/Navbar';
+import { FaWhatsapp } from 'react-icons/fa';
+import "./App.css"
 
-function App() {
+const App = () => {
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (item) => {
+    const existingItem = cartItems.find(cartItem => cartItem.id === item.id);
+    if (existingItem) {
+      setCartItems(cartItems.map(cartItem => 
+        cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+      ));
+    } else {
+      setCartItems([...cartItems, { ...item, quantity: 1 }]);
+    }
+  };
+
+  const updateCartItemQuantity = (itemId, newQuantity) => {
+    if (newQuantity < 1) {
+      removeFromCart(itemId);
+    } else {
+      setCartItems(cartItems.map(cartItem => 
+        cartItem.id === itemId ? { ...cartItem, quantity: newQuantity } : cartItem
+      ));
+    }
+  };
+
+  const removeFromCart = (itemId) => {
+    setCartItems(cartItems.filter(cartItem => cartItem.id !== itemId));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+
+      <Navbar/>
+      <a href='/'>
+        <div  className='homepage-watsap'><FaWhatsapp/> <span>chat with Us on Whatsapp.</span> </div>
+      </a>
+      
+      <Routes>
+       
+        <Route path="/" element={<ProductList />} />
+        <Route path="/products/:productName" element={<SecondaryProducts />} />
+        <Route 
+          path="/products/:productName/:productId" 
+          element={<SingleProduct addToCart={addToCart} />} 
+        />
+        <Route 
+          path="/cart" element={<Cart cartItems={cartItems} updateCartItemQuantity={updateCartItemQuantity} removeFromCart={removeFromCart} />} 
+          />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
