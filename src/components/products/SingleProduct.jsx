@@ -13,12 +13,13 @@ const SingleProduct = ({ addToCart }) => {
   };
 
   return (
-    <div>
+    <div className="single-product">
       <h1>{productName} - {product?.name}</h1>
       {product ? (
         <div>
           <p>Product ID: {product.id}</p>
           <p>Product Name: {product.name}</p>
+          <p>Product Description: {product.description}</p>
           <img src={product.image} alt="" />
           {/* Add more product details here */}
           <button onClick={handleAddToCart}>Add to Cart</button>

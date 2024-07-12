@@ -17,7 +17,7 @@ const SecondaryProducts = () => {
             <img src={product.image} alt="" />
             
             <Link to={`/products/${productName}/${product.id}`}>{product.name}</Link>
-            <Link to="/"> <button>Back home</button></Link>
+        
           </li>
         ))}
       </ul>

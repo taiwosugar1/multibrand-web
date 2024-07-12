@@ -2,6 +2,7 @@ import React from 'react'
 import "./Navbar.css"
 import { FaPhone, FaSearch, FaUser, FaWhatsapp } from 'react-icons/fa'
 import { FaCartFlatbed } from 'react-icons/fa6'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -12,11 +13,11 @@ const Navbar = () => {
                     <h3>MULTIBRAND</h3>
                 </div>
                 <ul className='ul-list'>
-                    <li>All Product</li>
+                    <Link to="/products/"><li>All Product</li></Link>
                     <li>About Us</li>
                     <li>Blog</li>
                     <li>Call For Designs</li>
-                    <li>Customers</li>
+                    <Link to="/"> <li>Home</li></Link>
                 </ul>
                 <ul className='ul-icon'>
                     <li><FaSearch/></li>

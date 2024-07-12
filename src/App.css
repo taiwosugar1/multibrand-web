@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+li, a{
+  list-style: none;
+  text-decoration: none;
+}
 
 
 .homepage-watsap {
@@ -9,7 +13,7 @@
   align-items: center;
   align-content: center;
   top:600px;
-  left: 77%;
+  left: 80%;
   width: 270px;
   height: 65px;
   color: white;
@@ -18,8 +22,25 @@
   border-radius: 40px;
   position: fixed;
   box-shadow:1px 2px 5px grey ;
+  z-index: 999;
 }
+.homepage-watsap::after{
+  content: "@";
+  color: white;
+  background: red;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  align-content: center;
+  border-radius: 50%;
+  margin-top: -70px;
+
+}
+
 .homepage-watsap span{
   color: black;
   margin-left: 20px;
+}
+.homepage-watsap:hover{
+  background: rgb(30, 104, 30);
 }

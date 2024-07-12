@@ -7,6 +7,7 @@ import Cart from './components/products/Cart';
 import Navbar from './components/navbar/Navbar';
 import { FaWhatsapp } from 'react-icons/fa';
 import "./App.css"
+import Home from './pages/Home';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -45,8 +46,8 @@ const App = () => {
       </a>
       
       <Routes>
-       
-        <Route path="/" element={<ProductList />} />
+        <Route path="/" element={<Home/>}/>
+        <Route path="/product-list" element={<ProductList />} />
         <Route path="/products/:productName" element={<SecondaryProducts />} />
         <Route 
           path="/products/:productName/:productId" 
