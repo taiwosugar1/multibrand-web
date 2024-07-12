@@ -30,5 +30,11 @@ const secondaryProducts = {
       { name: 'smartwatch', id: 3 ,image:"/images/brand1.jpg" , price:"",description:""},
       { name: 'pocket watch', id: 4 ,image:"/images/brand1.jpg" , price:"",description:""},
     ],
+    food: [
+      { name: 'analog watch', id: 1 ,image:"/images/brand1.jpg" , price:"",description:""},
+      { name: 'digital watch', id: 2 ,image:"/images/brand1.jpg" , price:"",description:""},
+      { name: 'smartwatch', id: 3 ,image:"/images/brand1.jpg" , price:"",description:""},
+      { name: 'pocket watch', id: 4 ,image:"/images/brand1.jpg" , price:"",description:""},
+    ],
   };
   export default  secondaryProducts 
