@@ -44,7 +44,7 @@
     border: none;
 }
 .ul-icon li{
-    margin: 0px 22px;
+    margin: 0px 20px;
     font-size: 22px;
     list-style: none;
 }
@@ -84,5 +84,10 @@
     .navbar header .logo h3{
         margin: 20px;
         cursor: pointer;
+    }
+    .ul-icon li{
+        margin: 0px 22px;
+        font-size: 20px;
+        list-style: none;
     }
 }
