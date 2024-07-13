@@ -25,7 +25,7 @@ const Cart = ({ cartItems, updateCartItemQuantity, removeFromCart }) => {
                 <div className="quantity-controls">
                   <img src={item.image} alt="" />
                   <button onClick={() => updateCartItemQuantity(item.id, item.quantity - 1)}  className='cart-button'>-</button>
-                  <span>{item.quantity}</span>
+                  <h3>{item.quantity}</h3>
                   <button onClick={() => updateCartItemQuantity(item.id, item.quantity + 1)} className='cart-button'>+</button>
                 </div>
                 <button onClick={() => removeFromCart(item.id)}  className='cart-button'>Remove</button>

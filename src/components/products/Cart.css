@@ -45,8 +45,10 @@
   }
    .cart-button{
     width: 120px;
+    height: 40px;
     color: white;
     background: blue;
+    margin-bottom: 19px;
    }
   
   .file-input {
