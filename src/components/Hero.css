@@ -30,7 +30,7 @@
     width: 30%;
     height: 80%;
     border-radius: 30px;
-    background: rgb(191, 191, 191);
+    background: url(/public/images/book1.jpg);
     margin: 0px 30px;
 }
 @media screen and (max-width: 480px) {

@@ -74,7 +74,13 @@ const ProductArray = {
     ],
 
     Business_Cards:[
-      { name: 'Branded Mug', id: 1 ,image:"/images/brand1.png" , price:"",description:"", quantity:"100", delivery:"5"},
+      { name: 'Quality Business Cards', id: 1 ,image:"/images/card1.png" , price:"8,500",description:"", quantity:"100", delivery:"2"},
+      { name: 'Quality Business Cards', id: 2 ,image:"/images/card2.png" , price:"8,500",description:"", quantity:"100", delivery:"2"},
+      { name: 'Quality Business Cards', id: 3 ,image:"/images/card3.png" , price:"8,500",description:"", quantity:"100", delivery:"2"},
+      { name: 'Quality Business Cards', id: 4 ,image:"/images/card4.png" , price:"8,500",description:"", quantity:"100", delivery:"2"},
+      { name: 'Quality Business Cards', id: 5,image:"/images/card5.png" , price:"8,500",description:"", quantity:"100", delivery:"2"},
+      { name: 'Quality Business Cards', id: 6,image:"/images/card6.png" , price:"8,500",description:"", quantity:"100", delivery:"2"},
+      
     ],
   };
   export default  ProductArray 
