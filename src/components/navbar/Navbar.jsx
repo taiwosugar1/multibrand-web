@@ -1,8 +1,9 @@
 import React from 'react'
 import "./Navbar.css"
-import { FaPhone, FaSearch, FaUser, FaWhatsapp } from 'react-icons/fa'
+import { FaPhone, FaSearch, FaUser } from 'react-icons/fa'
 import { FaCartFlatbed } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
+import { IoLogoWhatsapp } from 'react-icons/io'
 
 const Navbar = () => {
   return (
@@ -13,7 +14,7 @@ const Navbar = () => {
                     <h3>MULTIBRAND</h3>
                 </div>
                 <ul className='ul-list'>
-                    <Link to="/products/"><li>All Product</li></Link>
+                    <Link to="/product-list"><li>All Products</li></Link>
                     <li>About Us</li>
                     <li>Blog</li>
                     <li>Call For Designs</li>
@@ -21,9 +22,10 @@ const Navbar = () => {
                 </ul>
                 <ul className='ul-icon'>
                     <li><FaSearch/></li>
-                    <li><FaPhone/></li>
-                    <li className='watsap-icon'><FaWhatsapp/></li>
-                    <li className="cart-icon"><FaCartFlatbed/></li>
+                    <Link to="tel: +234-802-929-9901"><li><FaPhone/></li></Link>
+                    <Link to='https://wa.me/2348029299901'> <li className='watsap-icon'><IoLogoWhatsapp /> </li></Link>
+                
+                   <Link to={"/cart"}><li className="cart-icon"><FaCartFlatbed/></li></Link> 
                     <li><FaUser/></li>
                 </ul>
             

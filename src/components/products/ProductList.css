@@ -34,8 +34,9 @@
 }
 
 .view-More-sec-button{
-  width: 300px;
+  width: 150px;
   height: 40px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,14 +69,18 @@
     .product-container{
         display: grid;
         place-content: center;
-        grid-template-columns: auto;
+        grid-template-columns: auto auto;
         
     }
     .product-box{
-       width: 300px;
+       max-width: 200px;
+       height: 290px;
         display: flex;
         align-items: center;
         align-content: center;
-        
+        margin-bottom: 40px;
+    }
+    .product-box img{
+        height: 150px;
     }
 }

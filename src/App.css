@@ -7,6 +7,11 @@ li, a{
   cursor: pointer;
 }
 
+hr{
+  width: 100%;
+  color: grey;
+}
+
 
 
 .homepage-watsap {
@@ -39,6 +44,11 @@ li, a{
   margin-top: -70px;
 
 }
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .homepage-watsap span{
   color: black;
@@ -47,8 +57,15 @@ li, a{
 .homepage-watsap:hover{
   background: rgb(30, 104, 30);
 }
-@media screen and(max-width: 780px) {
+@media screen and (max-width: 780px) {
   .homepage-watsap{
     top: 600px;
+    right: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .homepage-watsap{
+    top: px;
+    
   }
 }

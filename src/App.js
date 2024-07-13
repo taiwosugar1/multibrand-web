@@ -41,7 +41,7 @@ const App = () => {
     <Router>
 
       <Navbar/>
-      <a href='/'>
+      <a href='https://wa.me/2348029299901'>
         <div  className='homepage-watsap'><FaWhatsapp/> <span>chat with Us on Whatsapp.</span> </div>
       </a>
       

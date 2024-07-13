@@ -5,6 +5,8 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
+    margin-top: 50px;
+    
 }
 .single-product-box {
     display: flex;
@@ -16,16 +18,20 @@
 
 .single-product-box img{
     width: 40%;
+    height: 400px;
 }
 .single-product-box .quantity{
     padding: 5px;
     background: red;
     color: white;
     border-radius: 15px;
+    margin-bottom: -320px;
+    margin-left: -150px;
 }
 
 .single-product-box div{
     width: 40%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,6 +45,7 @@
 }
 .add-to-cart-button button{
     padding: 5px 20px;
+    width: 150px;
     margin: 10px;
     background: #000;
     color: white;
@@ -51,9 +58,22 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        width: 90%;
+        width: 100%;
         height: 100%;
-        background: #000;
+        background: white;
+    }
+    .single-product-box img{
+        width: 80%;
+    }
+    .single-product-box .quantity{
+        padding: 3px;
+        background: red;
+        color: white;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        margin-top: -20px;
+        margin-left: 250px;
+        font-size: 12px;
     }
     
 }
