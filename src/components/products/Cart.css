@@ -1,4 +1,8 @@
 .cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
     font-family: Arial, sans-serif;
     padding: 20px;
     background-color: rgb(6, 6, 64);
@@ -60,12 +64,21 @@
   .upload-container {
     margin-top: 20px;
   }
+  .cart-return-button{
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    background: #000;
+  }
   
   @media (max-width: 767px) {
     .cart {
       margin-top: 50px;
       padding: 10px;
-      max-width: 100%;
+      width: 100%;
     }
   
     .cart h2 {

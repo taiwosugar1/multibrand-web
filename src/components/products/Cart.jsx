@@ -1,5 +1,6 @@
 import React from 'react';
-import './Cart.css';  // Import the CSS file
+import './Cart.css';
+import { Link } from 'react-router-dom';
 
 const Cart = ({ cartItems, updateCartItemQuantity, removeFromCart }) => {
   const handleFileUpload = (event) => {
@@ -42,9 +43,11 @@ const Cart = ({ cartItems, updateCartItemQuantity, removeFromCart }) => {
           type="file"
           accept=".jpeg,.cdr,.png,.jpg"
           onChange={handleFileUpload}
-          style={{ display: 'none' }}
+          // style={{ display: 'none' }}
         />
+        <Link to={"/product-list"}><button className='cart-return-button'>Back to Product</button></Link>
       </div>
+      
     </div>
   );
 };

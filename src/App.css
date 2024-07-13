@@ -4,7 +4,9 @@
 li, a{
   list-style: none;
   text-decoration: none;
+  cursor: pointer;
 }
+
 
 
 .homepage-watsap {
@@ -13,7 +15,7 @@ li, a{
   align-items: center;
   align-content: center;
   top:600px;
-  left: 80%;
+  right: 5px;
   width: 270px;
   height: 65px;
   color: white;
@@ -22,7 +24,8 @@ li, a{
   border-radius: 40px;
   position: fixed;
   box-shadow:1px 2px 5px grey ;
-  z-index: 999;
+  z-index: 9999;
+  cursor: pointer;
 }
 .homepage-watsap::after{
   content: "@";
@@ -43,4 +46,9 @@ li, a{
 }
 .homepage-watsap:hover{
   background: rgb(30, 104, 30);
+}
+@media screen and(max-width: 780px) {
+  .homepage-watsap{
+    top: 600px;
+  }
 }

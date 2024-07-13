@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import secondaryProducts from './secondaryProduct.js';
+import ProductArray from './ProductArray.js';
+import "./SingleProduct.css"
 
 
 const SingleProduct = ({ addToCart }) => {
   const { productName, productId } = useParams();
-  const products = secondaryProducts[productName] || [];
+  const products = ProductArray[productName] || [];
   const product = products.find((p) => p.id === parseInt(productId, 10));
 
   const handleAddToCart = () => {
@@ -14,22 +15,29 @@ const SingleProduct = ({ addToCart }) => {
 
   return (
     <div className="single-product">
-      <h1>{productName} - {product?.name}</h1>
+      <h1>{product?.name}</h1>
       {product ? (
-        <div>
-          <p>Product ID: {product.id}</p>
-          <p>Product Name: {product.name}</p>
-          <p>Product Description: {product.description}</p>
+        <div className='single-product-box'>
           <img src={product.image} alt="" />
-          {/* Add more product details here */}
-          <button onClick={handleAddToCart}>Add to Cart</button>
+          <p className='quantity'>MIN: {product.quantity} Units(s)</p>
+          <div>
+          <p>Product Name: {product.name}</p>
+          <p>Product Price: {product.price}</p>
+          <p>Product Description: {product.description}</p>
           
+          
+          {/* Add more product details here */}
+          <div className='add-to-cart-button'>
+          <button onClick={handleAddToCart}>Add to Cart</button>
+          <Link to="/cart"><button>View Cart</button></Link>
+          </div>
+          </div>
         </div>
         
       ) : (
         <p>Product not found</p>
       )}
-      <Link to="/cart"><button>View Cart</button></Link>
+     
     </div>
   );
 };

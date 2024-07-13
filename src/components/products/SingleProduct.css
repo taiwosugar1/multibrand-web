@@ -3,4 +3,57 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.single-product-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 70%;
+}
+
+.single-product-box img{
+    width: 40%;
+}
+.single-product-box .quantity{
+    padding: 5px;
+    background: red;
+    color: white;
+    border-radius: 15px;
+}
+
+.single-product-box div{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.add-to-cart-button{
+    display: flex;
+    align-items: center;
+    width: 250px;
+}
+.add-to-cart-button button{
+    padding: 5px 20px;
+    margin: 10px;
+    background: #000;
+    color: white;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 480px){
+    .single-product-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 90%;
+        height: 100%;
+        background: #000;
+    }
+    
 }
