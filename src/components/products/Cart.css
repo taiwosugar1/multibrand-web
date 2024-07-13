@@ -39,6 +39,10 @@
     display: flex;
     flex-direction: column;
   }
+  .quantity-controls img{
+    width: 300px;
+    height: 200px;
+  }
    .cart-button{
     width: 120px;
     color: white;
