@@ -11,7 +11,7 @@ const SecondaryProducts = () => {
   return (
     <div className='secondary-product'>
       <br />
-      <h1>List Of {productName}</h1>
+      <h1>{productName}</h1>
       <hr />
       <div  className='secondary-product-container'>
         {products.map((product) => (

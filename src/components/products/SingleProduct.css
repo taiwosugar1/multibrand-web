@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     margin-top: 50px;
-    
+    margin-bottom: 0;
 }
 .single-product-box {
     display: flex;
@@ -39,7 +39,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
 }
 .single-product-box div p{
     width: 300px;

@@ -5,7 +5,10 @@
   flex-direction: column;
   background: rgb(236, 234, 234);
 }
-
+.secondary-product h1{
+  width: 80%;
+  text-align: center;
+}
 .secondary-product-container{
   display: grid;
   place-content: center;
@@ -34,6 +37,7 @@
 }
 .secondary-product-box h3{
   text-align: center;
+  width: 80%;
 }
 
 .view-product-details{
@@ -52,6 +56,7 @@
   .secondary-product-container{
       grid-template-columns: auto auto auto;
   }
+  
   .secondary-product-box{
       width: 200px;
       height: 350px;

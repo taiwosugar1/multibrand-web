@@ -9,6 +9,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import "./App.css"
 import Home from './pages/Home';
 import Footer from './components/Footer';
+import AboutUs from './pages/AboutUs';
 
 
 const App = () => {
@@ -52,6 +53,7 @@ const App = () => {
       
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path='/about' element={<AboutUs/>}/>
         <Route path="/product-list" element={<ProductList />} />
         <Route path="/products/:productName" element={<SecondaryProducts />} />
         <Route 

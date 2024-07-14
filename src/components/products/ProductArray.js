@@ -44,7 +44,7 @@ const ProductArray = {
       { name: 'Product Branding', id: 7, image: "/images/brand7.png", price: "", description: "Custom product branding to elevate your brand's presence.", quantity: "100", delivery: "5" },
   ],
 
-  letterhead: [
+  Letterhead: [
       { name: 'Analog Watch', id: 1, image: "/images/brand1.jpg", price: "", description: "A classic analog watch with timeless elegance.", quantity: "100", delivery: "5" },
       { name: 'Digital Watch', id: 2, image: "/images/brand1.jpg", price: "", description: "A modern digital watch with advanced features.", quantity: "100", delivery: "5" },
       { name: 'Smartwatch', id: 3, image: "/images/brand1.jpg", price: "", description: "A versatile smartwatch with multiple functionalities.", quantity: "100", delivery: "5" },
