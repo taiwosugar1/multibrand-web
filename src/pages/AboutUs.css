@@ -44,10 +44,12 @@
     height: 150px;
     border-radius: 50%;
 }
-.about-team-info{
+.about-team-info, .about-team-info h4{
     width: 200px;;
     align-items: center;
+    text-align: center;
 }
+
 .taiwo-p{
     text-align: justify;
     margin: 10px;
@@ -60,8 +62,11 @@
  .about-social a{
      margin: 15px;
      font-size: 30px;
-     color: #666;
+     color: #343434;
  }
+ .about-social a:hover{
+    color: #666;
+}
 
 @media screen and (max-width: 480px){
     .about .paragraph p{
@@ -70,5 +75,8 @@
     
 .about-team{
     width: 90%;
+} 
+.taiwo-p{
+    width: 70%;
 }
 }

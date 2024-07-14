@@ -19,17 +19,18 @@ const AboutUs = () => {
 
          <div className='our-team'>
          <div className="about-team">
-            <img src="/images/book5.png" alt="" />
+            <img src="https://media.licdn.com/dms/image/D4D03AQHKieTe_SeVSw/profile-displayphoto-shrink_400_400/0/1699351850648?e=1726704000&v=beta&t=zc_VNEKQRn6FIRNKGInxdlYvIDBci1v8ZTG8OJE5jXQ" alt="" />
             <div className="about-team-info">
                 <h3>Oguntoyinbo Taiwo O.</h3>
-                 <p>CEO</p>
+                 <p>Founder</p>
+                 <h4>Multibrand Digital Services</h4>
             </div>
          </div>
          <div className="about-team">
          <p className='taiwo-p'>Taiwo, the visionary owner of Multibrand Digital Services, is passionate about delivering exceptional printing services and ensuring every project meets the highest standards of quality and creativity.</p>
           <p className='taiwo-p'>With a dedication to customer satisfaction and a keen eye for detail, Taiwo leads our team to consistently exceed expectations.</p>
           <div className="about-social">
-           <a href="https://linkedn.com/"><FaLinkedin/></a>
+           <a href="https://www.linkedin.com/in/oguntoyinbo-taiwo-894466127/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3ByoSCyOb4THS%2FrfcSEzE1Aw%3D%3D"><FaLinkedin/></a>
             <a href="https://wa.me/2348029299901"><FaWhatsapp/></a>
             <a href="tel: +2348029299901"><FaPhone/></a>
          </div> 
