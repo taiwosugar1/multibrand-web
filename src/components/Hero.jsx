@@ -1,6 +1,7 @@
 import React from 'react'
-import { FaSearch } from "react-icons/fa";
+import { FaArrowAltCircleDown, FaArrowAltCircleRight, FaSearch } from "react-icons/fa";
 import "./Hero.css"
+import { Link } from 'react-router-dom';
 
 
 const Hero = () => {
@@ -14,7 +15,9 @@ const Hero = () => {
          <div className="search-box">
            <input type="text" placeholder="Search here..." />
            <button className="search-button"><FaSearch/></button>
+           
         </div>
+        <Link to={"https://wa.me/2348029299901"}><button className="start-print-button">Start Printing <FaArrowAltCircleRight/></button></Link>
         
         </div>
 
