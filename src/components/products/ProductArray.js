@@ -80,5 +80,8 @@ const ProductArray = {
       { name: 'Quality Business Cards', id: 5, image: "/images/card5.png", price: "8,500", description: "Creative business cards to showcase your brand.", quantity: "100", delivery: "2" },
       { name: 'Quality Business Cards', id: 6, image: "/images/card6.png", price: "8,500", description: "Unique business cards to leave a lasting impression.", quantity: "100", delivery: "2" },
   ],
+  Company_Branding:[
+    { name: 'Company ', id: 6, image: "/images/card6.png", price: "8,500", description: "Unique business cards to leave a lasting impression.", quantity: "100", delivery: "2" },
+  ]
 };
 export default ProductArray

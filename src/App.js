@@ -8,6 +8,7 @@ import Navbar from './components/navbar/Navbar';
 import { FaWhatsapp } from 'react-icons/fa';
 import "./App.css"
 import Home from './pages/Home';
+import { DiFirebase } from 'react-icons/di';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -39,6 +40,9 @@ const App = () => {
 
   return (
     <Router>
+      <div className='call'>
+        <p>+234 802 929 9901, +234 912 960 7191</p>
+      </div>
 
       <Navbar/>
       <a href='https://wa.me/2348029299901'>
