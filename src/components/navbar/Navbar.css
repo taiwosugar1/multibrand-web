@@ -8,7 +8,6 @@
     top: 0;
     z-index: 999;
     border-bottom: 1px solid grey;
-
 }
 .navbar header{
     align-items: center;
@@ -32,7 +31,6 @@
     justify-content: space-between;
     flex-wrap: nowrap;
 }
-
 .navbar header .ul-list li{
     display: flex;
     align-items: center;
@@ -63,8 +61,9 @@
 }
 @media screen and (max-width: 768px) {
     .navbar{
-        height:  200px;
+        height: auto;
         margin-bottom: 50px;
+        flex-direction: column;
     }
     .navbar header, .navbar header ul{
         align-items: center;
@@ -73,22 +72,36 @@
         justify-content: center;
         background: #f7f5f5;
         width: 100%;
-        
-    } 
-    
+    }
     .navbar header .ul-list{
-        padding: 20px 0px;
+        display: none;
+        flex-direction: column;
+        width: 100%;
     }
-    /* .navbar header .ul-list li{
-        border: 1px solid grey;
-    } */
-    .navbar header .logo h3{
-        margin: 20px;
+    .navbar header .ul-list.show{
+        display: flex;
+    }
+    .navbar header .ul-list li{
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .navbar header .logo{
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .navbar header .ul-icon{
+        width: 100%;
+        justify-content: space-around;
+    }
+    .dropdown-btn{
+        display: block;
+        background: #f0ecec;
+        border: none;
         cursor: pointer;
-    }
-    .ul-icon li{
-        margin: 0px 22px;
-        font-size: 20px;
-        list-style: none;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
     }
 }
