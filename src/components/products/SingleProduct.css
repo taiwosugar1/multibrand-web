@@ -38,6 +38,10 @@
     flex-direction: column;
 
 }
+.single-product-box div p{
+    width: 300px;
+    text-align: center;
+}
 .add-to-cart-button{
     display: flex;
     align-items: center;
@@ -64,6 +68,7 @@
     }
     .single-product-box img{
         width: 80%;
+        height: 300px;
     }
     .single-product-box .quantity{
         padding: 3px;

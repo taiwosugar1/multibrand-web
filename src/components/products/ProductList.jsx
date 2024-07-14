@@ -9,7 +9,7 @@ const primaryProducts = [
   { name: 'Bags', id: 3, image:"/images/bag1.png", price:"1000"  },
   { name: 'Branding', id: 4 , image:"/images/brand1.png", price:"" },
   { name: 'Letterhead', id: 5, image:"", price:""  },
-  { name: 'Custum_Mugs', id: 6, image:"/images/mug1.png", price:""  },
+  { name: 'Custum_Mugs', id: 6, image:"/images/cup1.png", price:""  },
   { name: 'Business_Cards', id: 6, image:"/images/card2.png", price:""  },
 ];
 

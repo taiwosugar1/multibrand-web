@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Hero.css"
+import Hero2 from './Hero2'
 
 const Hero = () => {
   return (
@@ -8,7 +9,7 @@ const Hero = () => {
 
 
         <div className="hero-box-one">
-          
+          <Hero2/>
         </div>
 
 
