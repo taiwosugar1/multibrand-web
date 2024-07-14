@@ -80,8 +80,17 @@ const ProductArray = {
       { name: 'Quality Business Cards', id: 5, image: "/images/card5.png", price: "8,500", description: "Creative business cards to showcase your brand.", quantity: "100", delivery: "2" },
       { name: 'Quality Business Cards', id: 6, image: "/images/card6.png", price: "8,500", description: "Unique business cards to leave a lasting impression.", quantity: "100", delivery: "2" },
   ],
-  Company_Branding:[
-    { name: 'Company ', id: 6, image: "/images/card6.png", price: "8,500", description: "Unique business cards to leave a lasting impression.", quantity: "100", delivery: "2" },
+  Business_Stationeries:[
+    { name: 'Quality Business Stationeries ', id: 1, image: "/images/bus1.png", price: "50,500", description: "Unique business stationeries to leave a lasting impression.", quantity: "50", delivery: "3" },
+    { name: 'Quality Business Stationeries ', id: 2, image: "/images/bus2.png", price: "50,500", description: "Unique business stationeries to leave a lasting impression.", quantity: "50", delivery: "3" },
+    { name: 'Quality Business Stationeries ', id: 3, image: "/images/bus3.png", price: "50,500", description: "Unique business stationeries to leave a lasting impression.", quantity: "50", delivery: "3" },
+    { name: 'Quality Business Stationeries ', id: 4, image: "/images/bus4.png", price: "50,500", description: "Unique business stationeries to leave a lasting impression.", quantity: "50", delivery: "3" },
+    { name: 'Quality Business Stationeries ', id: 5, image: "/images/bus5.png", price: "50,500", description: "Unique business stationeries to leave a lasting impression.", quantity: "50", delivery: "3" },
+    { name: 'Quality Business Stationeries ', id: 6, image: "/images/bus6.png", price: "50,500", description: "Unique business stationeries to leave a lasting impression.", quantity: "50", delivery: "3" },
+    { name: 'Quality Business Stationeries ', id: 7, image: "/images/bus7.png", price: "50,500", description: "Unique business stationeries to leave a lasting impression.", quantity: "50", delivery: "3" },
+    { name: 'Quality Business Stationeries ', id: 8, image: "/images/bus8.png", price: "50,500", description: "Unique business stationeries to leave a lasting impression.", quantity: "50", delivery: "3" },
+    { name: 'Quality Business Stationeries ', id: 9, image: "/images/bus9.png", price: "50,500", description: "Unique business stationeries to leave a lasting impression.", quantity: "50", delivery: "3" },
+    { name: 'Quality Business Stationeries ', id: 10, image: "/images/bus10.png", price: "50,500", description: "Unique business stationeries to leave a lasting impression.", quantity: "50", delivery: "3" },
   ]
 };
 export default ProductArray

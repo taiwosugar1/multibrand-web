@@ -12,7 +12,7 @@ const primaryProducts = [
   { name: 'Custum_Mugs', id: 6, image:"/images/cup1.png", price:""  },
   { name: 'Business_Cards', id: 7, image:"/images/card2.png", price:""  },
   { name: 'Calender', id: 8, image:"/images/calender2.png", price:""  },
-  { name: 'Company_Branding', id: 9 , image:"/images/company.png", price:"" },
+  { name: 'Business_Stationeries', id: 9 , image:"/images/company.png", price:"" },
 ];
 
 const ProductsList = () => {

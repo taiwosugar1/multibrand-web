@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+.call{
+  display: none;
+}
 li, a{
   list-style: none;
   text-decoration: none;
@@ -67,5 +70,10 @@ button{
   .homepage-watsap{
     top: 550px;
     
+  }
+  .call{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

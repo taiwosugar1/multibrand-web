@@ -8,7 +8,7 @@ import Navbar from './components/navbar/Navbar';
 import { FaWhatsapp } from 'react-icons/fa';
 import "./App.css"
 import Home from './pages/Home';
-import { DiFirebase } from 'react-icons/di';
+
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);

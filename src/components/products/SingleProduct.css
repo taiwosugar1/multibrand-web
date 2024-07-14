@@ -15,6 +15,9 @@
     width: 90%;
     height: 70%;
 }
+.single-product-box h3{
+    text-align: center;
+}
 
 .single-product-box img{
     width: 40%;

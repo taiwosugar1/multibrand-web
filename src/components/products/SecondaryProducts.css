@@ -32,6 +32,9 @@
   height: 200px;
   border-radius: 20px 20px 0px 0px;
 }
+.secondary-product-box h3{
+  text-align: center;
+}
 
 .view-product-details{
   width: 100px;
