@@ -21,7 +21,7 @@ const Navbar = () => {
             <ul className={`ul-list ${dropdownVisible ? 'show' : ''}`}>
                 <Link to="/product-list"><li>All Products</li></Link>
                 <Link to={"/about"}><li>About Us</li></Link>
-               <Link><li>Call For Designs</li></Link>
+               <Link to={"tel: +2348029299901"}><li>Call For Designs</li></Link>
                 <Link to="/"> <li>Home</li></Link>
             </ul>
             <ul className='ul-icon'>
