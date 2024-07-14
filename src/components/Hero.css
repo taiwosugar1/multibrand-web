@@ -65,8 +65,13 @@ input{
     border-radius: 30px;
     object-fit: cover;
     background-size: cover;
-    background: url(/public/images/bg9.png);
+    background: url(/public/images/bg6.png);
     margin: 0px 30px;
+}
+.hero-box-two img{
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
 }
 
 

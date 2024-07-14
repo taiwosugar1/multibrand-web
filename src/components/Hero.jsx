@@ -10,16 +10,16 @@ const Hero = () => {
         
 
         <div className="hero-box-one">
-
+        <h1>WHAT WOULD YOU LIKE TO PRINT ?</h1>
          <div className="search-box">
            <input type="text" placeholder="Search here..." />
            <button className="search-button"><FaSearch/></button>
         </div>
-        <h1>WHAT WOULD YOU LIKE TO PRINT</h1>
+        
         </div>
 
         <div className="hero-box-two">
-          <h1>Print your designs</h1>
+          <img src="/images/bus7.png" alt="" />
         </div>
        </div>
     </div>
