@@ -157,7 +157,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 320px;
+    top: 400px;
     width: var(--width-df);
     display: flex;
     justify-content: space-between;
@@ -227,6 +227,9 @@ top: 70px;
         margin-top: 50px;
         transform: translateY(-30px);
         text-shadow: 2px 2px 2px black;
+    }
+    .arrows{
+        top: 300px;
     }
     .arrows button{
         font-size: 2em;
