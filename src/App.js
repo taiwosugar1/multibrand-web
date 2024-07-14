@@ -8,6 +8,7 @@ import Navbar from './components/navbar/Navbar';
 import { FaWhatsapp } from 'react-icons/fa';
 import "./App.css"
 import Home from './pages/Home';
+import Footer from './components/Footer';
 
 
 const App = () => {
@@ -61,6 +62,7 @@ const App = () => {
           path="/cart" element={<Cart cartItems={cartItems} updateCartItemQuantity={updateCartItemQuantity} removeFromCart={removeFromCart} />} 
           />
       </Routes>
+      <Footer/>
     </Router>
   );
 };
