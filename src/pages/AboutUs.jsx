@@ -4,6 +4,7 @@ import { FaLinkedin, FaPhone, FaWhatsapp } from 'react-icons/fa';
 
 
 const AboutUs = () => {
+  
   return (
     <div className='about'>
         <h1>About Us</h1>
@@ -38,7 +39,7 @@ const AboutUs = () => {
          
 
          </div>
-
+        
     </div>
   )
 };
