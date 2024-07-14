@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaArrowAltCircleDown, FaArrowAltCircleRight, FaSearch } from "react-icons/fa";
+import { FaArrowAltCircleRight, FaSearch } from "react-icons/fa";
 import "./Hero.css"
 import { Link } from 'react-router-dom';
 
