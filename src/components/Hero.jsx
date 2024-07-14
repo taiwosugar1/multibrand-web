@@ -1,21 +1,26 @@
 import React from 'react'
+import { FaSearch } from "react-icons/fa";
 import "./Hero.css"
-import Hero2 from './Hero2'
+
 
 const Hero = () => {
   return (
     <div className='hero'>
        <div className="hero-container">
-
+        
 
         <div className="hero-box-one">
-          <Hero2/>
+
+         <div className="search-box">
+           <input type="text" placeholder="Search here..." />
+           <button className="search-button"><FaSearch/></button>
+        </div>
+        <h1>WHAT WOULD YOU LIKE TO PRINT</h1>
         </div>
 
-
-
-
-        <div className="hero-box-two">2</div>
+        <div className="hero-box-two">
+          <h1>Print your designs</h1>
+        </div>
        </div>
     </div>
   )
