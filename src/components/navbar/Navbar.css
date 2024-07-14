@@ -62,7 +62,7 @@
 @media screen and (max-width: 768px) {
     .navbar{
         height: auto;
-        margin-bottom: 50px;
+        margin-bottom: 5px;
         flex-direction: column;
         position: sticky;
         top: 0;
