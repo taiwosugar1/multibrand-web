@@ -2,49 +2,40 @@ import React, { useEffect, useState } from 'react'
 import { FaArrowAltCircleRight, FaSearch } from "react-icons/fa";
 import "./Hero.css"
 import { Link } from 'react-router-dom';
-
+import images from './products/Image.js';
 
 const Hero = () => {
-  const [titleIndex, setTitleIndex] = useState(0);
+
+
+  const [imageIndex, setImageIndex] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setTitleIndex((prevIndex) => (prevIndex + 1) % 3);
-      // 3 is the number of titles
-    }, 5000);
-     // 4000ms = 4 seconds
-
+      setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // 3000ms = 3 seconds
     return () => clearInterval(intervalId);
-  }, []);
+  }, [images.length]);
 
   return (
     <div className='hero'>
-       <div className="hero-container">
-        
-
+      <div className="hero-container">
         <div className="hero-box-one">
-        <h1>WHAT WOULD YOU LIKE TO PRINT ?</h1>
-         <div className="search-box">
-           <input type="text" placeholder="Search here..." />
-           <button className="search-button"><FaSearch/></button>
-           
-        </div>
-        <Link to={"https://wa.me/2348029299901"}><button className="start-print-button">Start Printing <FaArrowAltCircleRight/></button></Link>
-        
+          <h1>WHAT WOULD YOU LIKE TO PRINT ?</h1>
+          <div className="search-box">
+            <input type="text" placeholder="Search here..." />
+            <button className="search-button"><FaSearch /></button>
+          </div>
+          <Link to={"https://wa.me/2348029299901"}>
+            <button className="start-print-button">Start Printing <FaArrowAltCircleRight /></button>
+          </Link>
         </div>
 
         <div className="hero-box-two">
-             {[
-              <img key="title1" src='/images/bus3.png' alt=''/>,
-              <img key="title2" src='/images/book7.png' alt=''/>,
-              <img key="title3" src='/images/cloth3.png' alt=''/>
-             ][titleIndex]}
-             
+          <img src={images[imageIndex].url} alt={images[imageIndex].alt} />
         </div>
-       </div>
+      </div>
     </div>
   )
 }
 
-export default Hero
-
+export default Hero;
