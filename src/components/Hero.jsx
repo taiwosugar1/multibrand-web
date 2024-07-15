@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { FaArrowAltCircleRight, FaSearch } from "react-icons/fa";
+import { GoArrowRight } from "react-icons/go";
 import "./Hero.css"
 import { Link } from 'react-router-dom';
 import images from './products/Image.js';
+import { FaSearch } from 'react-icons/fa';
 
 const Hero = () => {
 
@@ -26,7 +27,7 @@ const Hero = () => {
             <button className="search-button"><FaSearch /></button>
           </div>
           <Link to={"https://wa.me/2348029299901"}>
-            <button className="start-print-button">Start Printing <FaArrowAltCircleRight /></button>
+            <button className="start-print-button">Start Printing < GoArrowRight /></button>
           </Link>
         </div>
 
