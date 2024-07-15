@@ -14,7 +14,7 @@ const Hero = () => {
       setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 4000); // 3000ms = 3 seconds
     return () => clearInterval(intervalId);
-  }, [images.length]);
+  }, []);
 
   return (
     <div className='hero'>

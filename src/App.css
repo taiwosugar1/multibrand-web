@@ -4,7 +4,7 @@
 .call{
   display: none;
 }
-li, a{
+li, a, button{
   list-style: none;
   text-decoration: none;
   cursor: pointer;

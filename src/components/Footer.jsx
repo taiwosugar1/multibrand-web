@@ -7,8 +7,10 @@ const Footer = () => {
   return (
     <footer className='footer'>
         <div className='footer-one'>
-            <p> Thank you for choosing Multibrand Digital Services, where your ideas take shape and come to life.</p>
+        <img src="/images/paystack.png" alt="" />
+            <p className='first-image'> Thank you for choosing Multibrand Digital Services, where your ideas take shape and come to life.</p>
         </div>
+        
          <div className="footer-social">
             <a href="https://facebook.com/multibrandprint"><FaFacebook/></a>
             <a href="https://instagram.com/multibrandprints"><FaInstagram/></a>

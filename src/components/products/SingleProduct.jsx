@@ -13,6 +13,7 @@ const SingleProduct = ({ addToCart }) => {
     addToCart(product);
   };
 
+  
   return (
     <div className="single-product">
       <h1>{product?.name}</h1>
