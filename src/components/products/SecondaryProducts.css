@@ -29,12 +29,14 @@
   border-radius: 20px;
   
 }
+
 .secondary-product-box img{
   top: 0;
   width: 100%;
   height: 200px;
   border-radius: 20px 20px 0px 0px;
 }
+
 .secondary-product-box h3{
   text-align: center;
   width: 80%;
@@ -51,6 +53,7 @@
   background: #000;
   color: white;
 }
+
 @media screen and (max-width: 768px){
   
   .secondary-product-container{
@@ -61,7 +64,9 @@
       width: 200px;
       height: 350px;
       
-    } .secondary-product-box img{
+    } 
+    
+    .secondary-product-box img{
       width: 100%;
       height: 150px;
     }

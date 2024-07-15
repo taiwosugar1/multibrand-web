@@ -15,8 +15,6 @@ const Footer = () => {
             <a href="https://facebook.com/multibrandprint"><FaFacebook/></a>
             <a href="https://instagram.com/multibrandprints"><FaInstagram/></a>
             <a href="https://twitter.com/oguntoyintaiwo"><FaTwitter/></a>
-            <a href="https://wa.me/2348029299901"><FaWhatsapp/></a>
-            <a href="tel: +2348029299901"><FaPhone/></a>
             <a href="mailto:multibranddigital@gmail.com"><MdEmail/></a>
          </div>
 
