@@ -20,7 +20,7 @@ const Footer = () => {
 
          <div className="footer-social">
           <h4 href="about">About Us</h4>
-          <h4 href="term-condition">T and C</h4>
+          <h4 href="term-condition">T & C</h4>
           <h4 href="privacy-policy">Privacy Policy</h4>
          </div>
          <p className='footer-under'>Copyright 2024 © <b>Multibrand Digital Services</b> <br />All rights reserved.</p>
