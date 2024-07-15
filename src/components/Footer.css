@@ -63,4 +63,8 @@
         border-radius: 50%;
         background: #fff;
      }
+     .footer-social h4{
+        color: #fff;
+        margin: 10px 15px;
+     }
 }
