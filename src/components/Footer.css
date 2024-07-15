@@ -47,6 +47,14 @@
     border-radius: 50%;
     background: #fff;
  }
+ .footer-links{
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+ }
+ .footer-links h4{
+    color: #fff;
+ }
 
 .footer-under{
     width: 80%;

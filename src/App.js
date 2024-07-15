@@ -48,7 +48,7 @@ const App = () => {
 
       <Navbar/>
       <a href='https://wa.me/2348029299901'>
-        <div  className='homepage-watsap'><FaWhatsapp/> <span>chat with Us on Whatsapp.</span> </div>
+        <div  className='homepage-watsap'><FaWhatsapp/> <span>Whatsapp quick chat.</span> </div>
       </a>
       
       <Routes>

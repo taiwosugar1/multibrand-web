@@ -26,10 +26,10 @@ hr{
   justify-content: center;
   align-items: center;
   align-content: center;
-  top:600px;
-  right: 5px;
-  width: 270px;
-  height: 65px;
+  top:550px;
+  right: 2px;
+  width: 200px;
+  height: 50px;
   color: white;
   font-weight: 200;
   background: rgb(66, 200, 66);
@@ -59,7 +59,7 @@ button{
 
 .homepage-watsap span{
   color: black;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .homepage-watsap:hover{
   background: rgb(30, 104, 30);
