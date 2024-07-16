@@ -62,7 +62,7 @@ const ProductArray = {
       { name: 'Envelope', id: 6, image: "/images/envelope6.png", price: "", description: "A premium envelope for high-quality mailing.", quantity: "100", delivery: "5" },
   ],
 
-  Custum_Mugs: [
+  Costum_Mugs: [
       { name: 'Branded Mug', id: 1, image: "/images/cup1.png", price: "1,200", description: "A customized branded mug, ideal for promotions and gifts.", quantity: "", delivery: "3" },
       { name: 'Branded Mug', id: 2, image: "/images/cup2.png", price: "1,200", description: "A high-quality branded mug with a unique design.", quantity: "", delivery: "3" },
       { name: 'Branded Mug', id: 3, image: "/images/cup3.png", price: "1,200", description: "A stylish branded mug, perfect for coffee and tea.", quantity: "", delivery: "3" },

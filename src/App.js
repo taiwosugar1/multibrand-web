@@ -6,11 +6,12 @@ import SingleProduct from './components/products/SingleProduct';
 import Cart from './components/products/Cart';
 import Navbar from './components/navbar/Navbar';
 import { FaWhatsapp } from 'react-icons/fa';
-import "./App.css"
+import Swal from 'sweetalert2';
+import "./App.css";
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import AboutUs from './pages/AboutUs';
-
+import Category from './components/navbar/Category';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -40,20 +41,37 @@ const App = () => {
     setCartItems(cartItems.filter(cartItem => cartItem.id !== itemId));
   };
 
+  const showSwal = () => {
+    Swal.fire({
+      title: 'Select a Category',
+      html: `
+        <div>
+          <a href="/category/Books" class="swal-category-link">Books</a><br/>
+          <a href="/category/Tshirt_branding" class="swal-category-link">T-Shirt Branding</a><br/>
+          <a href="/category/Custom_Mugs" class="swal-category-link">Mugs</a><br/>
+          <a href="/category/Branding" class="swal-category-link">Branding</a><br/>
+          <a href="/category/Bags" class="swal-category-link">Bags</a><br/>
+        </div>
+      `,
+      showCloseButton: true,
+      showConfirmButton: false
+    });
+  };
+
   return (
     <Router>
       <div className='call'>
         <p>+234 802 929 9901, +234 912 960 7191</p>
       </div>
 
-      <Navbar/>
+      <Navbar showSwal={showSwal} />
       <a href='https://wa.me/2348029299901'>
-        <div  className='homepage-watsap'><FaWhatsapp/> <span>Whatsapp quick chat.</span> </div>
+        <div className='homepage-watsap'><FaWhatsapp /> <span>Whatsapp quick chat.</span> </div>
       </a>
-      
+
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path='/about' element={<AboutUs/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path='/about' element={<AboutUs />} />
         <Route path="/product-list" element={<ProductList />} />
         <Route path="/products/:productName" element={<SecondaryProducts />} />
         <Route 
@@ -62,9 +80,10 @@ const App = () => {
         />
         <Route 
           path="/cart" element={<Cart cartItems={cartItems} updateCartItemQuantity={updateCartItemQuantity} removeFromCart={removeFromCart} />} 
-          />
+        />
+        <Route path="/category/:category" element={<Category />} />  {/* Dynamic category route */}
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
   );
 };
