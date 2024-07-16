@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { GoArrowRight } from "react-icons/go";
 import "./Hero.css"
-import { Link } from 'react-router-dom';
+
 import images from './products/Image.js';
 import { FaSearch } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const Hero = () => {
 
@@ -17,6 +18,42 @@ const Hero = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const showSwal = () => {
+    Swal.fire({
+      title: 'Select a Category',
+      html: `
+        <div class="category-showSwal">
+          <p><a href="/category/Books" class="swal-category-link">Books</a></p>
+          <p><a href="/category/Tshirt_branding" class="swal-category-link">T-Shirt Branding</a></p>
+          <p><a href="/category/Custom_Mugs" class="swal-category-link">Mugs</a></p>
+          <p><a href="/category/Branding" class="swal-category-link">Branding</a></p>
+          <p><a href="/category/Bags" class="swal-category-link">Bags</a></p>
+        </div>
+      `,
+      showCloseButton: true,
+      showConfirmButton: false
+    });
+  };
+  <style>
+  {`
+  .category-showSwal {
+    border: 1px solid grey;
+  }
+
+  .category-showSwal p {
+    color: grey;
+    border-bottom: 1px solid grey;
+    padding: 8px 0;
+  }
+
+  .swal-category-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  `}
+</style>
+
+
   return (
     <div className='hero'>
       <div className="hero-container">
@@ -26,9 +63,9 @@ const Hero = () => {
             <input type="text" placeholder="Search here..." />
             <button className="search-button"><FaSearch /></button>
           </div>
-          <Link to={"https://wa.me/2348029299901"}>
-            <button className="start-print-button">Start Printing < GoArrowRight /></button>
-          </Link>
+          
+            <button className="start-print-button" onClick={showSwal }>Start Printing < GoArrowRight /></button>
+         
         </div>
 
         <div className="hero-box-two">
