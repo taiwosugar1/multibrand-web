@@ -55,16 +55,24 @@ const Hero = () => {
           <img src={images[imageIndex].url} alt={images[imageIndex].alt} />
         </div>
       </div>
+
+
       <style>
   {`
   .category-showSwal {
     border: 1px solid grey;
+    background-color: #333;
   }
 
   .category-showSwal p {
-    color: #333;
-    border-bottom: 1px solid grey;
+    color: #fff;
+    border-bottom: 1px solid white;
     padding: 8px 0;
+  }
+
+   .category-showSwal p:hover {
+    color: aqua;
+    text-decoration: underline;
   }
 
   .swal-category-link {
@@ -73,6 +81,7 @@ const Hero = () => {
   }
   `}
 </style>
+
     </div>
   )
 }

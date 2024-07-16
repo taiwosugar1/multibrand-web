@@ -72,11 +72,6 @@
 .dropdown-btn{
     display: none;
 }
-.show-swal-button{
-    background: #000;
-    color: white;
-    padding: 5px 2px;
-}
 @media screen and (max-width: 768px) {
     .navbar{
         height: auto;
