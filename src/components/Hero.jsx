@@ -34,24 +34,7 @@ const Hero = () => {
       showConfirmButton: false
     });
   };
-  <style>
-  {`
-  .category-showSwal {
-    border: 1px solid grey;
-  }
-
-  .category-showSwal p {
-    color: grey;
-    border-bottom: 1px solid grey;
-    padding: 8px 0;
-  }
-
-  .swal-category-link {
-    text-decoration: none;
-    color: inherit;
-  }
-  `}
-</style>
+  
 
 
   return (
@@ -72,6 +55,24 @@ const Hero = () => {
           <img src={images[imageIndex].url} alt={images[imageIndex].alt} />
         </div>
       </div>
+      <style>
+  {`
+  .category-showSwal {
+    border: 1px solid grey;
+  }
+
+  .category-showSwal p {
+    color: #333;
+    border-bottom: 1px solid grey;
+    padding: 8px 0;
+  }
+
+  .swal-category-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  `}
+</style>
     </div>
   )
 }
