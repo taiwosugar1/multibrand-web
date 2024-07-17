@@ -28,6 +28,7 @@ const Footer = () => {
 
            <img src="/images/paystack.png" alt="" />
             <p className='first-image'> Thank you for choosing Multibrand Digital Services, where your ideas take shape and come to life.</p>
+            <Link to={"http://multibrand-video.vercel.app/"}><button>Video Call</button></Link>
 
          </div>
          <p className='footer-under'>Copyright 2024 © <b>Multibrand Digital Services</b> <br />All rights reserved.</p>
