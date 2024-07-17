@@ -50,7 +50,7 @@ const Contact = () => {
         </div>
 
         <div className="input-box">
-          <textarea name="message" placeholder='Write your feedback here..' required className='field message'></textarea>
+          <textarea name="message" placeholder='Write your feedback here' required className='field message'></textarea>
         </div>
 
         <button type='submit'>Send Feedback</button>
