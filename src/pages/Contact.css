@@ -1,0 +1,65 @@
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    justify-content: center;
+    height: 400px;
+    margin-top: -5px;
+    background: rgb(42, 42, 42);
+}
+
+.contact-form form{
+    width: 90%;
+    background: rgb(42, 42, 42);
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    color: #333;
+    margin: 3px;
+}
+
+.contact-form form h1{
+   font-size: 20px;
+   text-align: center;
+}
+.contact-form form .input-box{
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contact-form form .input-box .field{
+    width: 90%;
+    height: 30px;
+    background: 2px solid rgb(42, 42, 42);
+    background: #fff;
+    outline: none;
+    border-radius: 6px;
+    padding: 5px;
+    font-size: 15px;
+    color: #333;
+    margin-top: 5px;
+}
+.contact-form form .input-box .field.message{
+    height: 100px;
+    resize: none;
+}
+.contact-form form button{
+    background: #826afb;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.contact-form form button:Hover{
+   background: blueviolet;
+}
