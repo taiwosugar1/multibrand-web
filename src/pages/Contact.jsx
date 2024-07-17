@@ -26,7 +26,7 @@ const Contact = () => {
     if (res.success) {
       Swal.fire({
         title: "Success",
-        text: "Message sent successfully",
+        text: "Feedback sent successfully",
         icon: "success"
       });
       clearForm();
@@ -39,7 +39,7 @@ const Contact = () => {
 
   return (
     <section className='contact-form'>
-      <h1>Message Us Here</h1>
+      <h1>Send Us Your Feedback</h1>
       <form onSubmit={onSubmit} ref={formRef}>
         <div className="input-box">
           <input type="text" placeholder='Full Name' name='name' required className='field' />
@@ -50,10 +50,10 @@ const Contact = () => {
         </div>
 
         <div className="input-box">
-          <textarea name="message" placeholder='Enter your message' required className='field message'></textarea>
+          <textarea name="message" placeholder='Write your feedback here..' required className='field message'></textarea>
         </div>
 
-        <button type='submit'>Send Message</button>
+        <button type='submit'>Send Feedback</button>
       </form>
     </section>
   );
