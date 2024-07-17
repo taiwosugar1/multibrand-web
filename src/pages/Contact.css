@@ -5,7 +5,7 @@
     width: 400px;
     justify-content: center;
     height: 400px;
-    margin-top: -10px;
+    margin-top: -15px;
     background: rgb(42, 42, 42);
 }
 
@@ -55,7 +55,8 @@
     cursor: pointer;
     font-size: 16px;
     color: #fff;
-    padding: 5px 10px;
+    width: 90%;
+    padding: 10px;
     font-weight: 500;
     margin-top: 15px;
     margin-left: 15px;
