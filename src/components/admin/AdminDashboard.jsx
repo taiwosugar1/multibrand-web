@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { useAuth } from '../../AuthContext';
-import './AdminDashboard.css'; 
-import Popup from './Popup';
+import './AdminDashboard.css'; // Ensure you have the CSS file
+import Popup from './popup';
 
 const AdminDashboard = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -60,7 +60,7 @@ const AdminDashboard = () => {
           </li>
         ))}
       </ul>
-      {showPopup && <Popup message="New feedback received!" onClose={handleClosePopup} />}
+      {showPopup && <Popup message="feedback succesfully loaded!" onClose={handleClosePopup} />}
     </div>
   );
 };
