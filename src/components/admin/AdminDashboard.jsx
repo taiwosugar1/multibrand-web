@@ -3,7 +3,7 @@ import { db } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { useAuth } from '../../AuthContext';
 import './AdminDashboard.css'; // Ensure you have the CSS file
-import Popup from './popup';
+import Popup from './Popup';
 
 const AdminDashboard = () => {
   const [feedbacks, setFeedbacks] = useState([]);
