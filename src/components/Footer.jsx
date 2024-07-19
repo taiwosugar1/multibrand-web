@@ -24,7 +24,8 @@ const Footer = () => {
              <Link to={"/about"}><h4>About Us</h4></Link> 
          <Link to={"/term-condition"}><h4>T & C</h4></Link> 
          <Link  to={"/privacy-policy"}><h4>Privacy Policy</h4></Link>
-         <Link  to={"/feedback"}><h4>Feedbacks</h4></Link> 
+         <Link  to={"/feedback"}><h4>Send Review</h4></Link>
+         <Link  to={"/feedbacklist"}><h4>View customer Reviews</h4></Link> 
           
          
 

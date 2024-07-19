@@ -39,7 +39,7 @@ const Contact = () => {
 
   return (
     <section className='contact-form'>
-      <h1>Send Us Your Feedback</h1>
+      <h1>SEND US MAIL</h1>
       <form onSubmit={onSubmit} ref={formRef}>
         <div className="input-box">
           <input type="text" placeholder='Full Name' name='name' required className='field' />
@@ -50,10 +50,10 @@ const Contact = () => {
         </div>
 
         <div className="input-box">
-          <textarea name="message" placeholder='Write your feedback here' required className='field message'></textarea>
+          <textarea name="message" placeholder='Write your mail here' required className='field message'></textarea>
         </div>
 
-        <button type='submit'>Send Feedback</button>
+        <button type='submit'>Send Mail</button>
       </form>
     </section>
   );

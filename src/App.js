@@ -18,6 +18,7 @@ import AdminDashboard from './components/admin/AdminDashboard';
 import FeedbackForm from './components/admin/FeedbackForm';
 import { AuthProvider } from './AuthContext';
 import ProtectedRoute from './ProtectedRoute';
+import UserFeedbackList from './components/admin/UserFeedbackList';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -92,6 +93,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<ProtectedRoute element={AdminDashboard} />} />
           <Route path="/feedback" element={<FeedbackForm />} />
+          <Route path="/feedbacklist" element={<UserFeedbackList />} />
         </Routes>
         <Footer />
       </Router>
