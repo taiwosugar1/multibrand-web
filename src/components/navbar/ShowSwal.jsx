@@ -31,20 +31,7 @@ const Home2 = () => {
              <Link to="/category/Bags"><p>Bags</p></Link> 
            
           )}
-          <style>
-            {`
-            
-            .category-showSwal {
-              border: "1px solid grey"
-            }
-
-            .category-showSwal p{
-              color: "grey"
-              border-bottom: "1px solid grey"
-            }
-            
-            `}
-          </style>
+        
 
     </div>
   );

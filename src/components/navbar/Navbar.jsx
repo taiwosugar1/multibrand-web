@@ -29,7 +29,9 @@ const Navbar = () => {
                 <Link to="tel: +234-802-929-9901"><li><FaPhone/></li></Link>
                 <Link to='https://wa.me/2348029299901'> <li className='watsap-icon'><IoLogoWhatsapp /> </li></Link>
                 <Link to={"/cart"}><li className="cart-icon"><FaCartFlatbed/></li></Link>
-                <li><FaUser/></li>
+                <Link to={'/login'}>
+                 <li><FaUser/></li>
+                </Link>
             </ul>
             <button className="dropdown-btn" onClick={toggleDropdown}><FaBars /></button>
         </header>
