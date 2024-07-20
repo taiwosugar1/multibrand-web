@@ -3,11 +3,14 @@ import { db } from '../../firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import './AddProductForm.css';
 
+
 const AddProductForm = ({ onProductAdded }) => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const [category, setCategory] = useState('');
+  const [quantity, setQuantity] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +26,10 @@ const AddProductForm = ({ onProductAdded }) => {
       setPrice('');
       setDescription('');
       setImageUrl('');
+      setCategory('');
+      setQuantity('')
       onProductAdded();
+      
       alert('Product added successfully!');
     } catch (error) {
       console.error('Error adding product: ', error);
@@ -49,6 +55,15 @@ const AddProductForm = ({ onProductAdded }) => {
         <label>Image URL:</label>
         <input type="text" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} required />
       </div>
+      <div>
+        <label> Qauantity:</label>
+        <input type="text" value={quantity} onChange={(e) => setQuantity(e.target.value)} required />
+      </div>
+      <div>
+        <label>Category:</label>
+        <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} required />
+      </div>
+      
       <button type="submit">Add Product</button>
     </form>
   );

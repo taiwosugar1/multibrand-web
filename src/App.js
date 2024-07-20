@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductList from './components/products/ProductList';
 import SecondaryProducts from './components/products/SecondaryProducts';
@@ -56,7 +56,7 @@ const App = () => {
         </a>
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" exact element={<Home />} />
           <Route path='/about' element={<AboutUs />} />
           <Route path="/product-list" element={<ProductList />} />
           <Route path="/products/:productName" element={<SecondaryProducts />} />

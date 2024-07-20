@@ -1,8 +1,8 @@
 // src/components/ImagePopup.jsx
 import React, { useEffect, useState } from 'react';
 import './ImagePopup.css';
-import { FaArrowAltCircleRight, FaLongArrowAltRight, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaLongArrowAltRight, FaTimes } from 'react-icons/fa';
+
 
 const ImagePopup = ({ images, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
