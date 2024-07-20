@@ -70,6 +70,16 @@
     padding-bottom: 20px;
     color: #333;
   }
+  .popup-content a{
+    position: absolute;
+    bottom: 20px;
+    right: 100px;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 3px 25px;
+    color: white;
+    background: #000;
+  }
   @media screen and (max-width: 768px){
     .popup-content img {
       max-width: 100%;

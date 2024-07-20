@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase';
-import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import { useAuth } from '../../AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Popup from './Popup';
 import './AdminDashboard.css';
 import AddProductForm from './AddProductForm';
 import UserFeedbackList from './UserFeedbackList';
@@ -15,7 +14,7 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { currentUser } = useAuth();
-  const [showPopup, setShowPopup] = useState(false);
+  
 
   const fetchProducts = async () => {
     try {
@@ -33,7 +32,7 @@ const AdminDashboard = () => {
       const ordersCollection = collection(db, 'orders');
       const ordersSnapshot = await getDocs(ordersCollection);
       setOrders(ordersSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-      setShowPopup(true); // Show the popup when orders are fetched
+      
     } catch (err) {
       setError('Failed to fetch orders');
       console.error('Error fetching orders:', err);
@@ -46,9 +45,7 @@ const AdminDashboard = () => {
     setLoading(false);
   }, []);
 
-  const handleClosePopup = () => {
-    setShowPopup(false);
-  };
+ 
 
   const handleProductAdded = async () => {
     try {
@@ -110,7 +107,6 @@ const AdminDashboard = () => {
         ))}
       </ul>
       <UserFeedbackList /> {/* Include the UserFeedbackList component */}
-      {showPopup && <Popup message="New orders received!" onClose={handleClosePopup} />}
       <ToastContainer /> {/* ToastContainer for displaying notifications */}
     </div>
   );

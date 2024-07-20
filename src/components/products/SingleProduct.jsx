@@ -29,10 +29,7 @@ const SingleProduct = ({ addToCart }) => {
           
           
           {/* Add more product details here */}
-          <div className='add-to-cart-button'>
-          <button onClick={handleAddToCart}>Add to Cart</button>
-          <Link to="/cart"><button className='add-to-cart-button'>View Cart</button></Link>
-          </div>
+          
           </div>
         </div>
         

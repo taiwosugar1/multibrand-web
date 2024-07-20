@@ -1,13 +1,15 @@
 // src/pages/SingleProductPage.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { db } from '../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
+import { CartContext } from '../../CartContext';
 import './SingleProductPage.css';
 
 const SingleProductPage = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -34,6 +36,7 @@ const SingleProductPage = () => {
       <p>Price: ${product.price}</p>
       <p>Description: {product.description}</p>
       <p>Timestamp: {new Date(product.timestamp.seconds * 1000).toLocaleString()}</p>
+      <button onClick={() => addToCart(product)}>Add to Cart</button>
     </div>
   );
 };

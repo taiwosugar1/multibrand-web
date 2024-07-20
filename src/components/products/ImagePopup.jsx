@@ -1,7 +1,7 @@
 // src/components/ImagePopup.jsx
 import React, { useEffect, useState } from 'react';
 import './ImagePopup.css';
-import { FaArrowAltCircleRight, FaTimes } from 'react-icons/fa';
+import { FaArrowAltCircleRight, FaLongArrowAltRight, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const ImagePopup = ({ images, onClose }) => {
@@ -30,9 +30,9 @@ const ImagePopup = ({ images, onClose }) => {
         {showCloseButton && <button onClick={onClose}><FaTimes /></button> }
         <h1>Welcome to Multibrand Digital Services</h1>
       <h3>Your Home of Printing</h3>
-      <p>Discover quality printing solutions tailored to your needs. From vibrant promotional materials to personalized stationery, we're here to bring your ideas to life with precision and excellence. Explore our range of services and let's create something remarkable together!</p>
-      
-      <Link to={'/adminproducts'}><button><FaArrowAltCircleRight/></button></Link>
+      <p>Discover quality printing solutions tailored to your needs. From vibrant promotional materials to personalized stationery, we're here to bring your ideas to life with precision and excellence. Explore our range of services and let's create something remarkable together! </p>
+      <a href="/adminproducts"><FaLongArrowAltRight /></a>
+     
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductList from './components/products/ProductList';
 import SecondaryProducts from './components/products/SecondaryProducts';
 import SingleProduct from './components/products/SingleProduct';
-import Cart from './components/products/Cart';
+import Cart from './components/admin/Cart';
 import Navbar from './components/navbar/Navbar';
 import { FaWhatsapp } from 'react-icons/fa';
 import Swal from 'sweetalert2';
@@ -21,35 +21,10 @@ import ProtectedRoute from './ProtectedRoute';
 import UserFeedbackList from './components/admin/UserFeedbackList';
 import SingleProductPage from './components/admin/SingleProductPage';
 import AdminProductList from './components/admin/AdminProductList';
+import { CartProvider } from './CartContext';
 
 const App = () => {
-  const [cartItems, setCartItems] = useState([]);
-
-  const addToCart = (item) => {
-    const existingItem = cartItems.find(cartItem => cartItem.id === item.id);
-    if (existingItem) {
-      setCartItems(cartItems.map(cartItem => 
-        cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
-      ));
-    } else {
-      setCartItems([...cartItems, { ...item, quantity: 1 }]);
-    }
-  };
-
-  const updateCartItemQuantity = (itemId, newQuantity) => {
-    if (newQuantity < 1) {
-      removeFromCart(itemId);
-    } else {
-      setCartItems(cartItems.map(cartItem => 
-        cartItem.id === itemId ? { ...cartItem, quantity: newQuantity } : cartItem
-      ));
-    }
-  };
-
-  const removeFromCart = (itemId) => {
-    setCartItems(cartItems.filter(cartItem => cartItem.id !== itemId));
-  };
-
+ 
   const showSwal = () => {
     Swal.fire({
       title: 'Select a Category',
@@ -69,6 +44,7 @@ const App = () => {
 
   return (
     <AuthProvider>
+      <CartProvider>
       <Router>
         <div className='call'>
           <p>+234 802 929 9901, +234 912 960 7191</p>
@@ -86,10 +62,10 @@ const App = () => {
           <Route path="/products/:productName" element={<SecondaryProducts />} />
           <Route 
             path="/products/:productName/:productId" 
-            element={<SingleProduct addToCart={addToCart} />} 
+            element={<SingleProduct />} 
           />
           <Route 
-            path="/cart" element={<Cart cartItems={cartItems} updateCartItemQuantity={updateCartItemQuantity} removeFromCart={removeFromCart} />} 
+            path="/cart" element={<Cart />} 
           />
           <Route path="/category/:category" element={<Category />} />
           <Route path="/login" element={<Login />} />
@@ -97,11 +73,12 @@ const App = () => {
           <Route path="/admin" element={<ProtectedRoute element={AdminDashboard} />} />
           <Route path="/feedback" element={<FeedbackForm />} />
           <Route path="/feedbacklist" element={<UserFeedbackList />} />
-          <Route path="/products/:productName/:productId" element={<SingleProductPage addToCart={addToCart} />} />
+          <Route path="/product/:productId" element={<SingleProductPage />} />
           
         </Routes>
         <Footer />
       </Router>
+      </CartProvider>
     </AuthProvider>
   );
 };
