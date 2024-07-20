@@ -19,6 +19,8 @@ import FeedbackForm from './components/admin/FeedbackForm';
 import { AuthProvider } from './AuthContext';
 import ProtectedRoute from './ProtectedRoute';
 import UserFeedbackList from './components/admin/UserFeedbackList';
+import SingleProductPage from './components/admin/SingleProductPage';
+import AdminProductList from './components/admin/AdminProductList';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -91,9 +93,12 @@ const App = () => {
           />
           <Route path="/category/:category" element={<Category />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/adminproducts" element={<AdminProductList />} />
           <Route path="/admin" element={<ProtectedRoute element={AdminDashboard} />} />
           <Route path="/feedback" element={<FeedbackForm />} />
           <Route path="/feedbacklist" element={<UserFeedbackList />} />
+          <Route path="/products/:productName/:productId" element={<SingleProductPage addToCart={addToCart} />} />
+          
         </Routes>
         <Footer />
       </Router>

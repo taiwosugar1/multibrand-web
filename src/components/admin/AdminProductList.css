@@ -1,0 +1,28 @@
+/* src/components/ProductList.css */
+.product-list {
+    margin: 20px 0;
+  }
+  
+  .product-list h2 {
+    margin-bottom: 10px;
+  }
+  
+  .product-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .product-list li {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .product-list li:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .product-list a {
+    text-decoration: none;
+    color: inherit;
+  }

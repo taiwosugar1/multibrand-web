@@ -1,0 +1,78 @@
+/* src/components/ImagePopup.css */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 30, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10000;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+  }
+  
+  .popup-content img {
+    max-width: 70%;
+    height: 60%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .popup-content .popup-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  
+  .popup-content button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .popup-content button:hover {
+    background-color: #0056b3;
+  }
+  .popup-content p{
+    width: 60%;
+    font-size: 13px;
+    padding-bottom: 20px;
+    color: #333;
+  }
+  @media screen and (max-width: 768px){
+    .popup-content img {
+      max-width: 100%;
+      height: 80%;
+    }
+  }

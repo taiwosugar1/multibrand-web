@@ -1,14 +1,14 @@
-// src/pages/FeedbackForm.js
 import React, { useState } from 'react';
 import { db } from '../../firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './FeedbackForm.css';
 
 const FeedbackForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,14 +22,16 @@ const FeedbackForm = () => {
       setName('');
       setEmail('');
       setMessage('');
-      setSuccessMessage('Feedback submitted successfully!');
+      toast.success('Feedback submitted successfully!');
     } catch (error) {
       console.error('Error submitting feedback: ', error);
+      toast.error('Failed to submit feedback. Please try again later.');
     }
   };
 
   return (
     <div>
+      <ToastContainer />
       <form onSubmit={handleSubmit} className='feedback-form'>
         <h2>Feedback Form</h2>
         <div>
@@ -46,7 +48,6 @@ const FeedbackForm = () => {
         </div>
         <button type="submit">Submit</button>
       </form>
-      {successMessage && <p className="success-message">{successMessage}</p>}
     </div>
   );
 };
