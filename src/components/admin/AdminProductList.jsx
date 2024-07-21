@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import './AdminProductList.css';
 import { FaArrowRight } from 'react-icons/fa';
 import AdminCategoryList from './AdminCategoryList';
-import Category from './AdminCategory';
+
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);

@@ -78,7 +78,7 @@
 }
 .order ul .customer-order {
   position: relative;
-  height: 400px;
+  height: 340px;
 }
 .order ul li .customer-order-details{
   display: flex;
@@ -89,7 +89,7 @@
 .order ul li .customer-order-details li{
   position: absolute;
   width: 90%;
-  bottom: 10px;
+  bottom: 0;
   left: 0;
-  height: 200px;
+  height: 150px;
 }

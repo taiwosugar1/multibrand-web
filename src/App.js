@@ -21,7 +21,6 @@ import ProtectedRoute from './ProtectedRoute';
 import UserFeedbackList from './components/admin/UserFeedbackList';
 import SingleProductPage from './components/admin/SingleProductPage';
 import AdminProductList from './components/admin/AdminProductList';
-import AdminCategory from './components/admin/AdminCategory';
 import AdminCategoryList from './components/admin/AdminCategoryList';
 import { CartProvider } from './CartContext';
 
@@ -80,7 +79,7 @@ const App = () => {
           <Route path="/feedback" element={<FeedbackForm />} />
           <Route path="/feedbacklist" element={<UserFeedbackList />} />
           <Route path="/product/:productId" element={<SingleProductPage />} />
-          <Route path="/category/:category" element={<AdminCategory />} />
+          <Route path="/category/:category" element={<Category />} />
           <Route path="/category" element={<AdminCategoryList />} />
           
           

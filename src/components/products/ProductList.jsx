@@ -25,7 +25,7 @@ const ProductsList = () => {
              <img src={product.image} alt="" />
              <h3>{product.name}</h3>
              <h3>As low as ₦{product.price}</h3>
-            <Link to={`/products/${product.id}`}><button className='view-More-sec-button'><p><FaArrowRight/></p></button></Link>
+            <Link to={`/products/${product.name}`}><button className='view-More-sec-button'><p><FaArrowRight/></p></button></Link>
            
           </div>
         ))}
