@@ -1,8 +1,9 @@
 // src/components/Cart.jsx
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../../CartContext';
-import { db } from '../../firebase'; // Import the Firebase database
-import { addDoc, collection } from 'firebase/firestore'; // Import Firestore functions
+import { db } from '../../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import emailjs from 'emailjs-com';
 import './Cart.css';
 
 const Cart = () => {
@@ -11,6 +12,7 @@ const Cart = () => {
   const [file, setFile] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
   const [name, setName] = useState('');
+  const [email, setEmail] = useState(''); // New state for email
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
 
@@ -29,24 +31,35 @@ const Cart = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (cartItems.length === 0) {
-      setSuccessMessage('Your cart is empty.');
-      return;
-    }
-
-    const order = {
-      customerDetails: {
-        name,
-        phone,
-        address
-      },
-      items: cartItems,
-      design: hasDesign && file ? file.name : null,
-      timestamp: new Date(),
-    };
-
     try {
-      await addDoc(collection(db, 'orders'), order);
+      const orderData = {
+        customerDetails: {
+          name,
+          email, // Include email in order data
+          phone,
+          address,
+        },
+        items: cartItems,
+        timestamp: serverTimestamp(),
+        designFile: file ? file.name : null,
+      };
+
+      await addDoc(collection(db, 'orders'), orderData);
+
+      // Send confirmation email
+      const emailData = {
+        to_name: name,
+        to_email: email,
+        message: `Thank you for your order! We have received your order and will process it shortly.`,
+      };
+
+      emailjs.send(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, emailData, process.env.REACT_APP_EMAILJS_USER_ID)
+        .then((response) => {
+          console.log('Email sent successfully!', response.status, response.text);
+        }, (err) => {
+          console.error('Failed to send email.', err);
+        });
+
       setSuccessMessage('Order submitted successfully!');
       clearCart();
     } catch (error) {
@@ -121,9 +134,18 @@ const Cart = () => {
             />
           </div>
           <div>
-            <label>Phone Number:</label>
+            <label>Email:</label>
             <input
-              type="tel"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label>Phone:</label>
+            <input
+              type="text"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required

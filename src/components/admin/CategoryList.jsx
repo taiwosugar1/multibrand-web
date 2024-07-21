@@ -3,10 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
-import './AdminProductList.css';
+import './ProductList.css';
 import { FaArrowRight } from 'react-icons/fa';
-import AdminCategoryList from './AdminCategoryList';
-import Category from './AdminCategory';
+import CategoryList from './CategoryList';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -50,7 +49,7 @@ const ProductList = () => {
 
   return (
     <div className='product-list'>
-      <AdminCategoryList onSelectCategory={setSelectedCategory} />
+      <CategoryList onSelectCategory={setSelectedCategory} />
       <h1>Our Products</h1>
       <div className='product-container'>
         {filteredProducts.map((product) => (
@@ -60,14 +59,9 @@ const ProductList = () => {
             <h3>As low as ₦{product.price}</h3>
             <Link to={`/product/${product.id}`}>
               <button className='view-More-sec-button'>
-              <FaArrowRight />
+                <p><FaArrowRight /></p>
               </button>
             </Link>
-            {/* <Link to={'/category'}>
-              <button className='view-More-sec-button'>
-                <FaArrowRight />
-              </button>
-            </Link> */}
           </div>
         ))}
       </div>
