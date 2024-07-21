@@ -1,6 +1,7 @@
+// src/components/admin/AdminDashboard.jsx
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, onSnapshot, deleteDoc, doc } from 'firebase/firestore';
 import { useAuth } from '../../AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,7 +15,6 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { currentUser } = useAuth();
-  
 
   const fetchProducts = async () => {
     try {
@@ -32,10 +32,20 @@ const AdminDashboard = () => {
       const ordersCollection = collection(db, 'orders');
       const ordersSnapshot = await getDocs(ordersCollection);
       setOrders(ordersSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-      
     } catch (err) {
       setError('Failed to fetch orders');
       console.error('Error fetching orders:', err);
+    }
+  };
+
+  const deleteProduct = async (productId) => {
+    try {
+      await deleteDoc(doc(db, 'products', productId));
+      toast.success('Product deleted successfully!');
+      fetchProducts();
+    } catch (error) {
+      console.error('Error deleting product: ', error);
+      toast.error('Failed to delete product. Please try again.');
     }
   };
 
@@ -43,13 +53,21 @@ const AdminDashboard = () => {
     fetchProducts();
     fetchOrders();
     setLoading(false);
-  }, []);
 
- 
+    const unsubscribe = onSnapshot(collection(db, 'orders'), (snapshot) => {
+      snapshot.docChanges().forEach((change) => {
+        if (change.type === 'added') {
+          toast.info('A new order has been submitted!');
+        }
+      });
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const handleProductAdded = async () => {
     try {
-      await fetchProducts(); // Fetch products again after adding
+      await fetchProducts();
       toast.success('Product added successfully!');
     } catch (error) {
       console.error('Error adding product: ', error);
@@ -73,7 +91,9 @@ const AdminDashboard = () => {
     <div className="admin-dashboard">
       <h2>Admin Dashboard</h2>
       <AddProductForm onProductAdded={handleProductAdded} />
-      <h3>Products</h3>
+
+      <div className="added-products">
+      <h3>Added Products</h3>
       <ul>
         {products.map(product => (
           <li key={product.id}>
@@ -82,21 +102,26 @@ const AdminDashboard = () => {
             <p>Price: ${product.price}</p>
             <p>Description: {product.description}</p>
             <p>Timestamp: {new Date(product.timestamp.seconds * 1000).toLocaleString()}</p>
+            <button onClick={() => deleteProduct(product.id)}>Delete</button>
           </li>
         ))}
       </ul>
+      </div>
+
+      <div className="order">
       <h3>Orders</h3>
       <ul>
         {orders.map(order => (
-          <li key={order.id}>
+          <li key={order.id} className='customer-order'>
             <p>Customer Name: {order.customerDetails.name}</p>
             <p>Customer Phone: {order.customerDetails.phone}</p>
             <p>Customer Address: {order.customerDetails.address}</p>
             <p>Timestamp: {new Date(order.timestamp.seconds * 1000).toLocaleString()}</p>
             <h4>Items:</h4>
-            <ul>
+            <ul className='customer-order-details'>
               {order.items.map(item => (
                 <li key={item.id}>
+                  <img src={item.image}  alt={item.title}  />
                   <p>Name: {item.name}</p>
                   <p>Price: ${item.price}</p>
                   <p>Quantity: {item.quantity}</p>
@@ -106,8 +131,9 @@ const AdminDashboard = () => {
           </li>
         ))}
       </ul>
-      <UserFeedbackList /> {/* Include the UserFeedbackList component */}
-      <ToastContainer /> {/* ToastContainer for displaying notifications */}
+      </div>
+      <UserFeedbackList />
+      <ToastContainer />
     </div>
   );
 };

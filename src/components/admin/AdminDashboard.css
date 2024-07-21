@@ -1,39 +1,95 @@
+
 .admin-dashboard {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 20px;
 }
 
-.admin-dashboard h2, .admin-dashboard h3 {
+.admin-dashboard h2 {
+  font-size: 2em;
   margin-bottom: 20px;
 }
 
-.admin-dashboard ul {
-  list-style-type: none;
-  padding: 0;
+.admin-dashboard h3 {
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
+
 
 .admin-dashboard li {
+  width: 300px;
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-dashboard li img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.admin-dashboard li p {
+  margin: 5px 0;
+}
+
+.loading,
+.error {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.added-products{
+  width: 100%;
+  height: auto;
+  align-content: center;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f8f9fa;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.product-image {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-right: 20px;
+.added-products ul{
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
-
-  .loading{
-    color: green;
-    text-align: center;
-    margin: 150px auto;
-
-  }
-  
+.order{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  border: 3px solid blue;
+}
+.order ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.order ul .customer-order {
+  position: relative;
+  height: 400px;
+}
+.order ul li .customer-order-details{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.order ul li .customer-order-details li{
+  position: absolute;
+  width: 90%;
+  bottom: 10px;
+  left: 0;
+  height: 200px;
+}

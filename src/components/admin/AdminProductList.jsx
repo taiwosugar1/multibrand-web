@@ -4,6 +4,7 @@ import { db } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import './AdminProductList.css';
+import { FaArrowRight } from 'react-icons/fa';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -19,21 +20,20 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div className="product-list">
-      <h2>Product List</h2>
-      <ul>
-        {products.map(product => (
-          <li key={product.id}>
-            <Link to={`/product/${product.id}`}>
-            <img src={product.image} alt={product.title} />
-              <p>Name: {product.name}</p>
-              <p>Price: ${product.price}</p>
-              <p>Description: {product.description}</p>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div className='product-list'>
+    <h1>Our Products</h1>
+    <div className='product-container'>
+      {products.map((product) => (
+        <div key={product.id} className='product-box'>
+           <img src={product.image} alt="" />
+           <h3>{product.name}</h3>
+           <h3>As low as ₦{product.price}</h3>
+           <Link to={`/product/${product.id}`}><button className='view-More-sec-button'><p><FaArrowRight/></p></button></Link>
+         
+        </div>
+      ))}
     </div>
+  </div>
   );
 };
 

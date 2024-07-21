@@ -1,0 +1,27 @@
+/* src/components/DesignUploadForm.css */
+.design-upload-form {
+    padding: 20px;
+  }
+  
+  .design-upload-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .design-upload-form div {
+    margin-bottom: 15px;
+  }
+  
+  .design-upload-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .design-upload-form input[type="file"] {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .success-message {
+    color: green;
+    margin-top: 20px;
+  }
