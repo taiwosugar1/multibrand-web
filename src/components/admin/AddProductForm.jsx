@@ -1,38 +1,62 @@
 import React, { useState } from 'react';
-import { db } from '../../firebase';
+import { db, storage } from '../../firebase'; // Import storage
 import { collection, addDoc } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import './AddProductForm.css';
-
 
 const AddProductForm = ({ onProductAdded }) => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
+  const [file, setFile] = useState(null);
   const [category, setCategory] = useState('');
   const [quantity, setQuantity] = useState('');
 
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!file) {
+      alert('Please upload an image.');
+      return;
+    }
+
     try {
+      // Reference to Firebase Storage
+      const storageRef = ref(storage, `images/${file.name}`);
+
+      // Upload the file
+      await uploadBytes(storageRef, file);
+
+      // Get the download URL
+      const imageUrl = await getDownloadURL(storageRef);
+
+      // Add product to Firestore
       await addDoc(collection(db, 'products'), {
         name,
         price: parseFloat(price),
         description,
-        image: imageUrl,
+        imageUrl, // Store the image URL
+        category,
+        quantity: parseInt(quantity, 10),
         timestamp: new Date()
       });
+
+      // Reset form fields
       setName('');
       setPrice('');
       setDescription('');
-      setImageUrl('');
+      setFile(null);
       setCategory('');
-      setQuantity('')
+      setQuantity('');
+
       onProductAdded();
-      
       alert('Product added successfully!');
     } catch (error) {
       console.error('Error adding product: ', error);
+      alert('Failed to add product. Please try again.');
     }
   };
 
@@ -52,21 +76,19 @@ const AddProductForm = ({ onProductAdded }) => {
         <textarea value={description} onChange={(e) => setDescription(e.target.value)} required></textarea>
       </div>
       <div>
-        <label>Image URL:</label>
-        <input type="text" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} required />
+        <label>Image:</label>
+        <input type="file" accept="image/*" onChange={handleFileChange} required />
       </div>
       <div>
-        <label> Qauantity:</label>
-        <input type="text" value={quantity} onChange={(e) => setQuantity(e.target.value)} required />
+        <label>Quantity:</label>
+        <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} required />
       </div>
       <div>
         <label>Category:</label>
         <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} required />
       </div>
-      
       <button type="submit">Add Product</button>
     </form>
   );
 };
-
-export default AddProductForm;
+export default AddProductForm
