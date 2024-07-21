@@ -24,27 +24,24 @@ const AddProductForm = ({ onProductAdded }) => {
     }
 
     try {
-      // Reference to Firebase Storage
+      console.log('Uploading file...');
       const storageRef = ref(storage, `images/${file.name}`);
-
-      // Upload the file
       await uploadBytes(storageRef, file);
-
-      // Get the download URL
       const imageUrl = await getDownloadURL(storageRef);
+      console.log('File uploaded successfully, URL:', imageUrl);
 
-      // Add product to Firestore
+      console.log('Adding document to Firestore...');
       await addDoc(collection(db, 'products'), {
         name,
         price: parseFloat(price),
         description,
-        imageUrl, // Store the image URL
+        imageUrl,
         category,
         quantity: parseInt(quantity, 10),
-        timestamp: new Date()
+        timestamp: new Date(),
       });
+      console.log('Product added successfully');
 
-      // Reset form fields
       setName('');
       setPrice('');
       setDescription('');
@@ -91,4 +88,5 @@ const AddProductForm = ({ onProductAdded }) => {
     </form>
   );
 };
-export default AddProductForm
+
+export default AddProductForm;
