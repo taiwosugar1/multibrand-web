@@ -28,7 +28,7 @@
 }
 .product-box img{
   top: 0;
-  width: 100%;
+  width: 300px;
   height: 200px;
   border-radius: 20px 20px 0 0;
 }
@@ -36,9 +36,10 @@
   color: #666;
 }
 
-.explore-more-button{
+.explore-more-button, .view-product-button{
 width: 120px;
 height: 40px;
+margin: 0px 15px;
 padding: 0px 15px;
 border-radius: 20px;
 display: flex;
@@ -48,7 +49,14 @@ background: #000;
 color: white;
  bottom: 0;
 }
-.productList-button{
+.explore-more-button{
+  background: blue;
+}
+.explore-more-button:hover, .view-product-button:hover{
+  background: #1a1760;
+  color: aqua;
+}
+.productlist-button{
   display: flex;
   align-items: center;
 }
@@ -87,7 +95,7 @@ color: white;
   }
   .product-box{
      width: 180px;
-     height: 290px;
+     height: 320px;
       display: flex;
       align-items: center;
       align-content: center;
@@ -95,6 +103,14 @@ color: white;
   }
   .product-box img{
       height: 130px;
-      width: 100%;
+      width: 180px;
   }
+  .explore-more-button, .view-product-button{
+    width: 70px;
+    margin: 0px 5px;
+    padding: 0px 5px;
+    border-radius: 10px;
+    font-size: 12px;
+    }
+   
 }

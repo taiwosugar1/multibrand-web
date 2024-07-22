@@ -12,7 +12,7 @@ const ProductList = () => {
   const navigate = useNavigate();
 
   // List of all predefined categories
-  const predefinedCategories = ['Books', 'Bags', 'Letterhead', 'Branding', 'Clothes', 'Fliers', 'Company Branding'];
+  const predefinedCategories = ['Books', 'Bags', 'Letterhead', 'Branding', 'Clothes', 'Fliers'];
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -91,11 +91,16 @@ const ProductList = () => {
             </Link>
             <h3>{product.name}</h3>
             <h3>As low as ₦{product.price}</h3>
- 
-            <button 
+            
+            <div className="productlist-button">
+             <Link to={`/product/${product.id}`}>
+             <button className='view-product-button'>View Product</button>
+             </Link>
+             <button 
               className='explore-more-button' 
               onClick={() => handleCategoryClick(product.categoryName)}
-            >Explore More</button>
+             >Explore More</button>
+          </div>
 
           </div>
         ))}
