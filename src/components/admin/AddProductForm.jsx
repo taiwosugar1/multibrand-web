@@ -12,6 +12,16 @@ const AddProductForm = ({ onProductAdded }) => {
   const [category, setCategory] = useState('');
   const [quantity, setQuantity] = useState('');
 
+  const categories = [
+    'Books',
+    'Bags',
+    'Letterhead',
+    'Branding',
+    'Clothes',
+    'Fliers',
+    'Company Branding'
+  ];
+
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
   };
@@ -80,9 +90,14 @@ const AddProductForm = ({ onProductAdded }) => {
         <label>Quantity:</label>
         <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} required />
       </div>
-      <div>
+      <div className='select-category-button'>
         <label>Category:</label>
-        <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} required />
+        <select value={category} onChange={(e) => setCategory(e.target.value)} required>
+          <option value="" disabled>Select a category</option>
+          {categories.map(cat => (
+            <option key={cat} value={cat}>{cat}</option>
+          ))}
+        </select>
       </div>
       <button type="submit">Add Product</button>
     </form>
@@ -90,4 +105,3 @@ const AddProductForm = ({ onProductAdded }) => {
 };
 
 export default AddProductForm;
-
