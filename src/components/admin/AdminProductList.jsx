@@ -1,17 +1,17 @@
 // src/components/ProductList.jsx
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import './AdminProductList.css';
 import { FaArrowRight } from 'react-icons/fa';
-import AdminCategoryList from './AdminCategoryList';
+
 
 
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+ 
+  const [Products, setProducts] = useState([]);
+  
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -19,8 +19,8 @@ const ProductList = () => {
         const productCollection = collection(db, 'products');
         const productSnapshot = await getDocs(productCollection);
         const productsList = productSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        setProducts(productsList);
-        setFilteredProducts(productsList); // Initialize with all products
+        
+        setProducts(productsList); // Initialize with all products
       } catch (err) {
         console.error('Error fetching products:', err);
       }
@@ -29,33 +29,17 @@ const ProductList = () => {
     fetchProducts();
   }, []);
 
-  useEffect(() => {
-    if (selectedCategory) {
-      const fetchProductsByCategory = async () => {
-        try {
-          const productCollection = collection(db, 'products');
-          const q = query(productCollection, where('categoryId', '==', selectedCategory));
-          const productSnapshot = await getDocs(q);
-          setFilteredProducts(productSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-        } catch (err) {
-          console.error('Error fetching products by category:', err);
-        }
-      };
 
-      fetchProductsByCategory();
-    } else {
-      setFilteredProducts(products);
-    }
-  }, [selectedCategory, products]);
 
+  
   return (
     <div className='product-list'>
-      <AdminCategoryList onSelectCategory={setSelectedCategory} />
+      
       <h1>Our Products</h1>
       <div className='product-container'>
-        {filteredProducts.map((product) => (
+        {Products.map((product) => (
           <div key={product.id} className='product-box'>
-            <img src={product.image} alt={product.name} />
+            <img src={product.imageUrl} alt="" />
             <h3>{product.name}</h3>
             <h3>As low as ₦{product.price}</h3>
             <Link to={`/product/${product.id}`}>
@@ -63,11 +47,11 @@ const ProductList = () => {
               <FaArrowRight />
               </button>
             </Link>
-            {/* <Link to={'/category'}>
+            <Link to={'/category'}>
               <button className='view-More-sec-button'>
                 <FaArrowRight />
               </button>
-            </Link> */}
+            </Link>
           </div>
         ))}
       </div>

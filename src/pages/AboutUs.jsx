@@ -1,6 +1,7 @@
 import React from 'react'
 import "./AboutUs.css"
-import { FaLinkedin, FaPhone, FaWhatsapp } from 'react-icons/fa';
+import { FaLinkedin, FaPhone, FaUser, FaWhatsapp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 const AboutUs = () => {
@@ -39,7 +40,9 @@ const AboutUs = () => {
          
 
          </div>
-        
+         <Link to={'/login'}>
+                 <li style={{background:"black", color:"green", padding:"10px"}}><FaUser/></li>
+                </Link>
     </div>
   )
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./Navbar.css";
-import { FaPhone, FaSearch, FaUser, FaBars } from 'react-icons/fa';
+import { FaPhone, FaSearch, FaBars } from 'react-icons/fa';
 import { FaCartFlatbed } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import { IoLogoWhatsapp } from 'react-icons/io';
@@ -29,9 +29,6 @@ const Navbar = () => {
                 <Link to="tel: +234-802-929-9901"><li><FaPhone/></li></Link>
                 <Link to='https://wa.me/2348029299901'> <li className='watsap-icon'><IoLogoWhatsapp /> </li></Link>
                 <Link to={"/cart"}><li className="cart-icon"><FaCartFlatbed/></li></Link>
-                <Link to={'/login'}>
-                 <li><FaUser/></li>
-                </Link>
             </ul>
             <button className="dropdown-btn" onClick={toggleDropdown}><FaBars /></button>
         </header>

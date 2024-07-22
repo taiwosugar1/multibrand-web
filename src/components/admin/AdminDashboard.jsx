@@ -121,7 +121,7 @@ const AdminDashboard = () => {
             <ul className='customer-order-details'>
               {order.items.map(item => (
                 <li key={item.id}>
-                  <img src={item.image}  alt={item.title}  />
+                  <img src={item.imageUrl}  alt=""  />
                   <p>Name: {item.name}</p>
                   <p>Price: ${item.price}</p>
                   <p>Quantity: {item.quantity}</p>

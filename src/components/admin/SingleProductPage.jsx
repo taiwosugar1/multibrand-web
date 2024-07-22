@@ -34,7 +34,7 @@ const SingleProductPage = () => {
       <h1>{product?.name}</h1>
       {product ? (
         <div className='single-product-box'>
-          <img src={product.image} alt="" />
+          <img src={product.imageUrl} alt="" />
           <p className='quantity'>MIN: {product.quantity} Units(s)</p>
           <div>
           <p>Product Name: </p><h3>{product.name}</h3>
