@@ -96,7 +96,7 @@ const ProductList = () => {
               className='explore-more-button' 
               onClick={() => handleCategoryClick(product.categoryName)}
             >Explore More</button>
-            
+
           </div>
         ))}
       </div>

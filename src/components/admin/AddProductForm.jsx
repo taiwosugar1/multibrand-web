@@ -9,7 +9,7 @@ const AddProductForm = ({ onProductAdded }) => {
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
   const [file, setFile] = useState(null);
-  const [category, setCategory] = useState('');
+  const [categoryName, setCategoryName] = useState('');
   const [quantity, setQuantity] = useState('');
 
   const categories = [
@@ -46,7 +46,7 @@ const AddProductForm = ({ onProductAdded }) => {
         price: parseFloat(price),
         description,
         imageUrl,
-        category,
+        categoryName,
         quantity: parseInt(quantity, 10),
         timestamp: new Date(),
       });
@@ -56,7 +56,7 @@ const AddProductForm = ({ onProductAdded }) => {
       setPrice('');
       setDescription('');
       setFile(null);
-      setCategory('');
+      setCategoryName('');
       setQuantity('');
 
       onProductAdded();
@@ -92,7 +92,7 @@ const AddProductForm = ({ onProductAdded }) => {
       </div>
       <div className='select-category-button'>
         <label>Category:</label>
-        <select value={category} onChange={(e) => setCategory(e.target.value)} required>
+        <select value={categoryName} onChange={(e) => setCategoryName(e.target.value)} required>
           <option value="" disabled>Select a category</option>
           {categories.map(cat => (
             <option key={cat} value={cat}>{cat}</option>
