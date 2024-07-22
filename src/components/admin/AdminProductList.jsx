@@ -75,7 +75,7 @@ const ProductList = () => {
       <h1>Our Products</h1>
       <div>
         {/* <label>Filter by Category: </label> */}
-        <select value={selectedCategory} onChange={handleCategoryChange}>
+        <select value={selectedCategory} onChange={handleCategoryChange} className='product-select'>
           <option value=''>All Categories</option>
           {categories.map((category) => (
             <option key={category.id} value={category.name}>{category.name}</option>

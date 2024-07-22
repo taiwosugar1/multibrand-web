@@ -36,6 +36,12 @@
   color: #666;
 }
 
+.product-select option, .product-select{
+  color: white;
+  background: #000;
+  margin: 4px;
+}
+
 .explore-more-button, .view-product-button{
 width: 120px;
 height: 40px;
