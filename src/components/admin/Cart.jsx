@@ -75,7 +75,7 @@ const Cart = () => {
         <p>Your cart is empty.</p>
       ) : (
         <div>
-          <ul>
+          <ul className='cart-item'>
             {cartItems.map(item => (
               <li key={item.id}>
                 <img src={item.image} alt={item.title} />
