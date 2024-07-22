@@ -5,7 +5,7 @@
   flex-direction: column;
   background: rgba(102, 102, 102, 0.1);
 }
-.product-list div select, .product-list div select option{
+.product-list select, .product-list select option{
   padding: 10px;
 }
 .product-container{

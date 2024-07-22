@@ -74,7 +74,7 @@ const ProductList = () => {
     <div className='product-list'>
       <h1>Our Products</h1>
       <div>
-        <label>Filter by Category: </label>
+        {/* <label>Filter by Category: </label> */}
         <select value={selectedCategory} onChange={handleCategoryChange}>
           <option value=''>All Categories</option>
           {categories.map((category) => (
@@ -82,6 +82,7 @@ const ProductList = () => {
           ))}
         </select>
       </div>
+
       <div className='product-container'>
         {products.map((product) => (
           <div key={product.id} className='product-box'>
@@ -95,6 +96,7 @@ const ProductList = () => {
               className='explore-more-button' 
               onClick={() => handleCategoryClick(product.categoryName)}
             >Explore More</button>
+            
           </div>
         ))}
       </div>
