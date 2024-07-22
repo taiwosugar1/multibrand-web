@@ -5,6 +5,9 @@
   flex-direction: column;
   background: rgba(102, 102, 102, 0.1);
 }
+.product-list div select, .product-list div select option{
+  padding: 10px;
+}
 .product-container{
   display: grid;
   place-content: center;
@@ -33,9 +36,10 @@
   color: #666;
 }
 
-.view-More-sec-button{
-width: 150px;
+.explore-more-button{
+width: 120px;
 height: 40px;
+padding: 0px 15px;
 border-radius: 20px;
 display: flex;
 align-items: center;
@@ -44,6 +48,11 @@ background: #000;
 color: white;
  bottom: 0;
 }
+.productList-button{
+  display: flex;
+  align-items: center;
+}
+
 @media screen and (max-width: 760px){
   .product-list{
       display: flex;
@@ -60,7 +69,11 @@ color: white;
      width: 300px;
       align-items: center;
       align-content: center;
-      
+  }
+  .productList-button{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
 

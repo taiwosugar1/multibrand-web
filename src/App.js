@@ -81,7 +81,7 @@ const App = () => {
           <Route path="/feedbacklist" element={<UserFeedbackList />} />
           <Route path="/product/:productId" element={<SingleProductPage />} />
           <Route path="/category/:category" element={<Category />} />
-          <Route path="/category/:categoryId" element={<AdminCategoryPage />} />
+          <Route path="/category/:categoryName" element={<AdminCategoryPage />} />
           <Route path="/category" element={<AdminCategoryList />} />
           
           
