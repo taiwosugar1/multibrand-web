@@ -12,7 +12,7 @@ const ProductList = () => {
   const navigate = useNavigate();
 
   // List of all predefined categories
-  const predefinedCategories = ['Books', 'Bags', 'Letterhead', 'Branding', 'Clothes', 'Fliers'];
+  const predefinedCategories = ['Books', 'Bags', 'Letterhead', 'Branding', 'Clothes', 'Fliers', 'Business Cards', 'Caps', 'Custum Mugs', 'Calendar'];
 
   useEffect(() => {
     const fetchProducts = async () => {

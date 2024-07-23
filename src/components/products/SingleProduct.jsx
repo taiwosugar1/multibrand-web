@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ProductArray from './ProductArray.js';
 import "./SingleProduct.css"
 
@@ -24,6 +24,7 @@ const SingleProduct = () => {
           <p>Product Price: <h4>{product.price}</h4></p>
           <h4>Product Description:</h4>
           <p>{product.description}</p>
+          <h3>Click <Link to={"https://wa.me/2348029299901"}>HERE</Link> For A Quick Order </h3>
           
           </div>
         </div>

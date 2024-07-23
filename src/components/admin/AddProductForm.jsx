@@ -19,7 +19,11 @@ const AddProductForm = ({ onProductAdded }) => {
     'Branding',
     'Clothes',
     'Fliers',
-    'Company Branding'
+    'Company Branding',
+    'Business Cards',
+    'Caps',
+    'Custum Mugs',
+    'Calendar',
   ];
 
   const handleFileChange = (e) => {
